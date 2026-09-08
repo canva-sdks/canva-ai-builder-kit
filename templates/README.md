@@ -33,6 +33,12 @@ This file is the default for Claude-based projects.
 
 Keep the instructions around 50 lines / a few thousand tokens, and ideally short enough to skim in under a minute. The file should be no more than 200 lines. 
 
+Things to keep in mind: 
+
+- CLAUDE.md gets loaded into context on every session, so it's a standing tax on your context window — bloat there is bloat in every conversation, forever.
+
+ - Anything that reads like reference documentation (full API lists, exhaustive style guides) belongs in a linked doc, not inline. Claude can read that file on demand if it needs it. CLAUDE.md should point to it, not contain it.
+
 ## Contributing
 
 Explain how to propose updates, where new tutorials or workflows belong, and how changes should be reviewed.

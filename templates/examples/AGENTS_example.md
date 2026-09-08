@@ -27,6 +27,19 @@ Use raw image generation only for standalone illustrative images or concept art.
 - Use Canva MCP for open-ended assistant-led design generation.
 - If a direct REST generate-design API is unavailable, use a `DesignProvider` abstraction so the app can support future Canva generation APIs.
 
+## Implementation Guidance
+
+When building a Canva-backed workflow, keep Canva integration code isolated behind a small provider or service layer. Return both editable Canva links and exported assets when possible.
+
+For example:
+
+- `createDesign(input)`
+- `personalizeTemplate(input)`
+- `exportDesign(input)`
+- `resizeDesign(input)`
+
+Prefer clear setup instructions, environment variables, and mock/demo modes so the project can run before full Canva authentication is configured.
+
 ## Avoid
 
 - Do not default to raw image generation for designed business or social assets.
