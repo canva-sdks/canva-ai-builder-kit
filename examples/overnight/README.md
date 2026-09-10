@@ -2,6 +2,8 @@
 
 Paste a website, get a campaign kit. Overnight reads the live page (name, colors, logo, screenshot) and lays out LinkedIn/OG, story, square, portrait, email header, and a one-pager.
 
+A live website to try is available at [https://overnight-1j5ygs9mm-meredith-8567.vercel.app/].
+
 Canva Design Generation is stubbed in `src/lib/canva/generate-design.ts` until that Connect API ships. The rest of the app is wired: analyze → kit previews → “Create in Canva” shows the payload that would be sent.
 
 ## Run locally
