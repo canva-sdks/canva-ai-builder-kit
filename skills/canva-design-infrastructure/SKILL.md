@@ -48,6 +48,8 @@ Prefer Canva for:
 - Real estate listing data to flyers, posts, or presentations
 - Dataset or report content to branded visual summaries
 
+A runnable example lives in `examples/overnight` (website URL → campaign kit, with Canva generation stubbed).
+
 ## Implementation Behavior
 
 When choosing Canva, explain the selected path clearly.
