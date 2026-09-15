@@ -1,15 +1,15 @@
-# Overnight
+# Social Campaign Generator
 
-Paste a website, get a campaign kit. Overnight reads the live page (name, colors, logo, screenshot) and lays out LinkedIn/OG, story, square, portrait, email header, and a one-pager.
+Paste a website, get a campaign kit. This recipe reads the live page (name, colors, logo, screenshot) and lays out LinkedIn/OG, story, square, portrait, email header, and a one-pager.
 
-A live website to try is available at [https://overnight-beta.vercel.app/].
+A live demo is available at [Campaign Generator](https://overnight-beta.vercel.app/).
 
-Canva Design Generation is stubbed in `src/lib/canva/generate-design.ts` until that Connect API ships. The rest of the app is wired: analyze → kit previews → “Create in Canva” shows the payload that would be sent.
+Canva design generation is stubbed in `src/lib/canva/generate-design.ts` until the relevant REST API is available. The rest of the app is wired: analyze → kit previews → “Create in Canva” shows the payload that would be sent.
 
 ## Run locally
 
 ```bash
-cd examples/overnight
+cd recipes/canva-social-campaign
 npm install
 npm run dev
 ```
@@ -18,10 +18,10 @@ Open [http://localhost:3000](http://localhost:3000). Try Linear, Stripe, or past
 
 ## Canva hook
 
-When Design Generation is available, implement `generateDesign()` in `src/lib/canva/generate-design.ts`:
+When design generation is available, implement `generateDesign()` in `src/lib/canva/generate-design.ts`:
 
 1. Upload `logoUrl` / `imageUrl` via the Assets API
 2. POST `query` + `design_type` (+ `asset_ids`)
-3. Return design id, edit URL, and thumbnail
+3. Return the design id, edit URL, and thumbnail
 
 `generateCampaignKit()` and `POST /api/canva/generate` already call that function.
