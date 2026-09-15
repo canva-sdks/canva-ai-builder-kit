@@ -1,55 +1,112 @@
-# Project Name
+# Agent Template Guide
 
-Brief description of what this template, skill, or workflow helps an agent do.
+This folder contains starter instruction files for AI coding agents. It is meant to help you add project-specific guidance to a repo without writing a large, generic instruction set from scratch.
 
-## Overview
+## What this is for
 
-Explain the problem this resource solves and who should use it.
+Use these files when you want an agent to understand:
 
-## What's Included
+- the repo's purpose and architecture
+- the preferred implementation patterns
+- which tools, frameworks, or services are expected
+- the repo-specific constraints and review standards
 
-- `AGENTS.md` - Default instructions for working with this project. Used for OpenAI tool: ChatGPT, Codex.
-- `CLAUDE.md` - Project context for Claude-based agents.
+This is most useful for repos that are being worked on by AI tools, agentic workflows, or multi-agent systems.
 
-## Getting Started
+## Included files
 
-1. Copy the files or directories you need into your project.
-2. Replace project-specific placeholders and links.
-3. Review the instructions with the team before using them in production.
+- `AGENTS.md` — the default project instructions for agent-based workflows, especially for OpenAI-style and general agent tooling.
+- `CLAUDE.md` — a shorter, more concise instruction file for Claude-based sessions.
 
-## Usage
+## When to use them
 
-Overview of all the templates in this folder and best practices when adding them to your skills folders.
+Copy one or both files into a project when you want the repo to provide a consistent operating guide for AI assistants.
 
-### AGENTS.md
+Use `AGENTS.md` when you want a richer project brief, including:
 
-This file is the fallback that Agents will use, and the prefered style for OpenAI-based projects. 
+- the product or technical goal
+- architecture boundaries
+- design or implementation decisions
+- repo conventions and rules
 
-Keep the instructions to 300-600 words, 900 word max. If you need more detailed files, use the `references/` infrastructure. 
+Use `CLAUDE.md` when you want a lighter-weight summary that can be loaded into context repeatedly. It should stay short and highly scannable.
 
-### CLAUDE.md
+## Recommended structure
 
-This file is the default for Claude-based projects. 
+Keep the file focused on the project, not on generic best practices.
 
-Keep the instructions around 50 lines / a few thousand tokens, and ideally short enough to skim in under a minute. The file should be no more than 200 lines. 
+A good template should include:
 
-Things to keep in mind: 
+1. purpose of the project
+2. architecture and folder responsibilities
+3. important constraints or conventions
+4. commands for local development and validation
+5. definition of done for a feature or fix
 
-- CLAUDE.md gets loaded into context on every session, so it's a standing tax on your context window — bloat there is bloat in every conversation, forever.
+## Good guidance vs. bad guidance
 
- - Anything that reads like reference documentation (full API lists, exhaustive style guides) belongs in a linked doc, not inline. Claude can read that file on demand if it needs it. CLAUDE.md should point to it, not contain it.
+Good agent instructions are:
 
-## Contributing
+- specific to the repository
+- short enough to read quickly
+- explicit about preferred patterns
+- concrete about what to validate
 
-Explain how to propose updates, where new tutorials or workflows belong, and how changes should be reviewed.
+Avoid:
 
-Before submitting changes:
+- lots of generic software advice
+- long API reference dumps
+- duplicated documentation that already exists elsewhere
+- vague instructions like “be careful” or “follow best practices”
 
-- Test the documented happy path.
-- Check at least one relevant failure case.
-- Update links, examples, and version-dependent assumptions.
+## AGENTS.md guidance
 
+Use `AGENTS.md` as the main source of project-level operating rules.
 
-## License
+A strong version usually stays around 300–600 words, with a hard cap around 900 words unless there is a clear reason to be longer.
 
-Add the project license or licensing guidance here.
+Keep it focused on:
+
+- project purpose
+- repo structure
+- architectural rules
+- preferred implementation choices
+- verification steps
+
+If a topic needs deeper documentation, link to a dedicated reference doc instead of stuffing it into the agent file.
+
+## CLAUDE.md guidance
+
+Use `CLAUDE.md` for a shorter, session-friendly overview.
+
+Keep it brief: roughly 50 lines or a few thousand tokens, and ideally readable in under a minute.
+
+Best practices:
+
+- prioritize the most important project context
+- keep it scannable and minimal
+- link to docs instead of repeating them inline
+- avoid bloating every session with reference material
+
+## Suggested usage flow
+
+1. Copy the file or files you need into the target repo.
+2. Replace the placeholders and project-specific details.
+3. Update the instructions to reflect the actual repo structure.
+4. Keep the guidance aligned with the current stack, commands, and conventions.
+5. Review the file with the team before using it in production workflows.
+
+## Contribution guidance
+
+If you update these templates:
+
+- keep them general enough to be reusable
+- prefer concise examples over long narrative blocks
+- avoid template content that is too tied to one product or codebase
+- ensure the examples still match common agent workflows
+
+## Practical rule
+
+The file should help an agent make good decisions quickly, not act as a second README.
+
+If the instructions can be summarized in one or two screens, that is usually the right level of detail.
